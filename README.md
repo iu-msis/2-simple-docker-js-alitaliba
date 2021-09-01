@@ -8,11 +8,11 @@ In Canvas, submit a link to your GitHub repository.
 # Requirements
 * Repository should have at least three separate _**substantive**_ commits, showing different stages of progress. Each commit should have a useful message.
 
-* Files are organized in a professional way. **You MUST use this folder structure.** All publicly visible files, including HTML files, exist in a folder named `/public`. CSS file(s) in a folder named 'css' (i.e., `/public/css`), Javascript files (if any) in a folder named 'js' (`/public/js`), image files in a folder named 'img' (`/public/img`), and all other files (if any, e.g., font files) in a folder named 'static' (`/public/static`).
+* Files are organized in a professional way. **You MUST use this folder structure.** All publicly visible files, including HTML files, exist in a folder named `/public`. CSS file(s) in a folder named 'css' (i.e., `/public/css`), Javascript files (if any) in a folder named 'js' (`/public/js`), image files in a folder named 'img' (`/public/img`), and all other files (if any, e.g., font files) in a folder named 'static' (`/public/static`). (DONE)
 
-* All files have web-appropriate names (no spaces; use dash or underscore), and appropriate extensions (`\*.htm`, `\*.html`, `\*.css`, etc.)
+* All files have web-appropriate names (no spaces; use dash or underscore), and appropriate extensions (`\*.htm`, `\*.html`, `\*.css`, etc.) (DONE)
 
-* Three separate HTML pages, including `index.html`. Home page MUST be named `index.htm` or `index.html` (Either extension is fine for HTML files.)
+* Three separate HTML pages, including `index.html`. Home page MUST be named `index.htm` or `index.html` (Either extension is fine for HTML files.) (DONE)
 
 * All pages have a common nav bar (on the top or left) that links the three pages. Pages use the same base style sheet(s), and have a common look and feel.
 
