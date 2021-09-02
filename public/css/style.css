@@ -11,3 +11,7 @@ h1 {
     text-align: center;
     padding-bottom: 3%;
 }
+
+.navleft{
+    align-items: flex-end;
+}
