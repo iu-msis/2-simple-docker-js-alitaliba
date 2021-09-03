@@ -6,7 +6,7 @@ Fork and checkout the assignment repository. Create files as described below. Co
 In Canvas, submit a link to your GitHub repository.
 
 # Requirements
-* Repository should have at least three separate _**substantive**_ commits, showing different stages of progress. Each commit should have a useful message.
+* Repository should have at least three separate _**substantive**_ commits, showing different stages of progress. Each commit should have a useful message. (DONE)
 
 * Files are organized in a professional way. **You MUST use this folder structure.** All publicly visible files, including HTML files, exist in a folder named `/public`. CSS file(s) in a folder named 'css' (i.e., `/public/css`), Javascript files (if any) in a folder named 'js' (`/public/js`), image files in a folder named 'img' (`/public/img`), and all other files (if any, e.g., font files) in a folder named 'static' (`/public/static`). (DONE)
 
