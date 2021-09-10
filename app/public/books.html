@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hello, world!</title>
+  </head>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark left">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Recruitment Hub</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="user.html">User</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Books</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>  
+
+  <body>
+    <h1>Record Your Recruitment Status</h1>
+    <p class='subheading'> We are proud of you</p>
+
+    <div class="container">
+      <div class="row">
+        <!-- Table Section -->
+        <div class="col-8">
+
+          <table class="table table-dark table-hover">
+
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Year Published</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Page Count</th>
+                <th scope="col">MSRP</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>12 Rules for Life: An Antidote to Chaos</td>
+                <td>Jordan B. Peterson</td>
+                <td>2018</td>
+                <td>Random House Canada Penguin Allen Lane (UK)</td>
+                <td>448 </td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>1984 (Signet Classics)</td>
+                <td>George Orwell</td>
+                <td>2017</td>
+                <td>Harvill Secker</td>
+                <td>328</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>A Man Called Ove: A Novel</td>
+                <td>Fredrik Backman</td>
+                <td>2016</td>
+                <td>Atri Books</td>
+                <td>368</td>
+                <td>8</td>
+              </tr>
+
+              <tr>
+                <th scope="row">4</th>
+                <td>A Wrinkle in Time (Time Quintet)</td>
+                <td>Madeleine L'Engle</td>
+                <td>2018</td>
+                <td>Farrar, Straus and Giroux</td>
+                <td>256</td>
+                <td>5</td>
+              </tr>
+
+              <tr>
+                <th scope="row">5</th>
+                <td>Alexander Hamilton</td>
+                <td>Ron Chernow</td>
+                <td>2016</td>
+                <td>Penguin Group</td>
+                <td>818</td>
+                <td>13</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Forms Section-->
+        <div class="col-4">
+          <form>
+            <fieldset>
+              <legend> Your top list </legend>
+
+              <div class="mb-3">
+                <label for="TextInput" class="form-label"> Title </label>
+                <input type="text" id="TextInput" class="form-control" placeholder="input">
+              </div>
+
+              <div class="mb-3">
+                <label for="TextInput" class="form-label"> Author </label>
+                <input type="text" id="TextInput" class="form-control" placeholder="input">
+              </div>
+
+              <div class="mb-3">
+                <label for="TextInput" class="form-label"> Year Published </label>
+                <input type="text" id="TextInput" class="form-control" placeholder="input">
+              </div>
+
+              <div class="mb-3">
+                <label for="TextInput" class="form-label"> Publisher </label>
+                <input type="text" id="TextInput" class="form-control" placeholder="input">
+              </div>
+
+              <div class="mb-3">
+                <label for="TextInput" class="form-label"> Page Count </label>
+                <input type="text" id="TextInput" class="form-control" placeholder="input">
+              </div>
+
+              <div class="mb-3">
+                <label for="TextInput" class="form-label"> MSRP </label>
+                <input type="text" id="TextInput" class="form-control" placeholder="input">
+              </div>
+
+
+              <div class="mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="FieldsetCheck">
+                  <label class="form-check-label" for="FieldsetCheck">
+                    Receive Notifications
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
