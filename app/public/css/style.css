@@ -20,6 +20,11 @@ a {
     padding-top: 5%;
 }
 
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
 .subheading {
     text-align: center;
     padding-bottom: 3%;
