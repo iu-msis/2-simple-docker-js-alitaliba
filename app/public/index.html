@@ -5,78 +5,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
 
-    <!-- Content Delivery Network (CDN). 
-      Makes copies of content in close places, so you can download content faster.
-      Works well for static content-->
-    <!-- We are grabing someone else script file-->
+    <title>Hello, world!</title>
+
     <script src="https://unpkg.com/vue@next"></script>
 
-    <title>Welcome!</title>
   </head>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark left">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Recruitment Hub</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="user.html">User</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="books.html">Books</a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>  
-
   <body>
-    <h1>Welcome!</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    
-    <p class='subheading'> Everything in one place. We are here for you!</p>
-    <a href="img/sunset.jpg">
-      <img src="img/sunset.jpg" class="img-fluid" alt="sunset image of a person looking over">
-    </a>
-    <p style="font-size: 6pt; text-align: center;">https://unsplash.com/photos/nnMCLx_eor4</p>
+    <div class="container">
+        <div class="row align-items-start">
+          <div class="col col-4">
+            <p>First of two columns</p>
+          </div>
+          <div id="offerApp" class="col col-8">
+            <h1>Hello, world!</h1>
 
+            <form v-on:onsubmit="fetchUser">
+              <button type='submit'>Refresh</button>
+            </form> <!-- Try to sends data to the action attributes, by default it's the page we're on. Refreshing the entire page-->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+            <p>{{person.name.first}} {{person.name.last}}</p>
+
+            <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
+            <p>{{ person }}</p>
+
+            <table class="table">
+                <tbody>
+                    <tr v-for="offer in offers">
+                        <td>{{ offer.name }}</td>
+                        <td>{{ offer.salary }}</td>
+                        <td>{{ offer.bonus }}</td>
+                        <td>{{ offer.company }}</td>
+                        <td>{{ offer.offerDate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+    <!--  Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-    created() {
-
-      fetch('https://randomuser.me/api/') <!-- carries back an object-->
-      .then( response => response.json()) <!-- short hand for a function-->
-      .then( (responseJason) => {
-        console.log(responseJson);
-
-        this.result = responseJson.results[0];
-      })
-      .catch( (err) => {
-        console.error(err);
-      })
-
-    }
-
+    <script src="js/index.js"></script>
   </body>
-
-  <script>src="js./index.js"</script>
-
 </html>
