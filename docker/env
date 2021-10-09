@@ -1,0 +1,6 @@
+# These information come from AWS...WATCH LECTURE VIDEO!!!!
+
+MYSQL_DATABASE=msisdb
+MYSQL_HOST=dbserver1.csceyxp09cxp.us-east-2.rds.amazonaws.com
+MYSQL_USER=aatalib
+MYSQL_PASSWORD=96456778Cats
