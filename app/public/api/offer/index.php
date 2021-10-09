@@ -8,20 +8,23 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM offer';
 $vars = [];
 
-// $_GET is super global - if student is 
 if (isset($_GET['student'])) {
-   // This is an example of a parameterized query
-   $sql = 'SELECT * FROM offer WHERE studentId = ?';
-   $vars = [ $_GET['student'] ];
+  // This is an example of a parameterized query
+  $sql = 'SELECT * FROM offer WHERE studentId = ?';
+
+  //NOT THIS WAY
+  // $sql = 'SELECT * FROM offer WHERE studentId = ' . $_GET['student'];
+
+  $vars = [ $_GET['student'] ];
 }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$students = $stmt->fetchAll();
+$offers = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($students, JSON_PRETTY_PRINT);
+$json = json_encode($offers, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');

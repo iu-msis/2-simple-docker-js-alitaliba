@@ -1,53 +1,55 @@
 const Offer = {
     data() {
       return {
-        "students": [],
-        "selectedStudent": null,
-        "offers": []
-      }
-    },
-    computed: {
-        prettyBirthday() {
-            return dayjs(this.person.dob.date)
-            .format('D MMM YYYY')
+            "students": [],
+            "offers": [],
+            "selectedStudent": null
         }
     },
+    computed: {
+        // prettyBirthday() {
+        //     return dayjs(this.person.dob.date)
+        //     .format('D MMM YYYY');
+        // }
+    },
     methods: {
-        selectStudents(s) {
+        selectStudent(s) {
+            console.log("Clicked", s);
             if (this.selectedStudent == s) {
                 return;
             }
+
             this.selectedStudent = s;
-            this.offers = [],
+            this.offers = [];
             this.fetchOfferData(s);
         },
         fetchStudentData() {
             fetch('/api/student/')
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                console.log(responseJson);
-                this.students = responseJson;
+            .then(response => response.json())
+            .then((parsedJson) => {
+                console.log(parsedJson);
+                this.students = parsedJson
             })
-            .catch( (err) => {
-                console.error(err);
+            .catch( err => {
+                console.error(err)
             })
         },
         fetchOfferData(s) {
-            fetch('/api/student/')
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                console.log(responseJson);
-                this.students = responseJson;
+            console.log("Fetching offers for", s);
+            fetch('/api/offer/?student=' + s.id)
+            .then(response => response.json())
+            .then((parsedJson) => {
+                console.log(parsedJson);
+                this.offers = parsedJson
             })
-            .catch( (err) => {
-                console.error(err);
+            .catch( err => {
+                console.error(err)
             })
         }
     },
     created() {
         this.fetchStudentData();
-    } //end created
-} // end Offer config
+    }
+  }
   
 Vue.createApp(Offer).mount('#offerApp');
-console.log("Z");
