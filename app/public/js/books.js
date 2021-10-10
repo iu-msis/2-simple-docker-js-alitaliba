@@ -1,4 +1,4 @@
-var book = {
+const book = {
     data() {
       return {
             books: []
