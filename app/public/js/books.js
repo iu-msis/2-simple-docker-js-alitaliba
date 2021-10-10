@@ -1,24 +1,17 @@
-const Offer = {
+var book = {
     data() {
       return {
-            "students": [],
-            "offers": [],
-            "selectedStudent": null
+            books: []
         }
     },
-    computed: {
-        // prettyBirthday() {
-        //     return dayjs(this.person.dob.date)
-        //     .format('D MMM YYYY');
-        // }
-    },
+    computed: {},
     methods: {
         fetchBooksData() {
             fetch("/api/books/")
-            .then(response => response.json())
-            .then((parsedJson) => {
-                console.log(parsedJson);
-                this.offers = parsedJson
+            .then( response => response.json())
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
             })
             .catch( err => {
                 console.error(err)
@@ -30,4 +23,4 @@ const Offer = {
     }
   }
   
-Vue.createApp(Offer).mount('#offerApp');
+Vue.createApp(book).mount('#bookApp');

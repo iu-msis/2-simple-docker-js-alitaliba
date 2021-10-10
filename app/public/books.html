@@ -9,7 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+
     <title>Hello, world!</title>
+    
   </head>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark left">
@@ -44,7 +48,7 @@
     <h1>Record Your Recruitment Status</h1>
     <p class='subheading'> We are proud of you</p>
 
-    <div class="container" id="offerApp">
+    <div class="container" id="bookApp">
       <div class="row align-items-start">
 
         <!-- The Javascript Section-->
@@ -60,7 +64,7 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr v-for="book in Books">
+                  <tr v-for="book in books">
                       <td>{{ book.title }}</td>
                       <td>{{ book.author }}</td>
                       <td>{{ book.year }}</td>
@@ -128,13 +132,12 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     
-    // Tablesort plugin from plugin http://tristen.ca/tablesort/demo/
+    <!--  Tablesort plugin from plugin http://tristen.ca/tablesort/demo/ -->
     <!-- Script Table -->
+    <script src="js/books.js"></script>
     <script src="js/tablesort.js"></script>
-    <script>
-      new Tablesort(document.getElementById('taskTable'));
-    </script>
 
+    <!-- Import App-->
     <script src="js/books.js"></script>
 
   </body>
