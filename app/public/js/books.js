@@ -14,7 +14,7 @@ const Offer = {
     },
     methods: {
         fetchBooksData() {
-            fetch("/api/student/")
+            fetch("/api/books/")
             .then(response => response.json())
             .then((parsedJson) => {
                 console.log(parsedJson);
@@ -26,7 +26,7 @@ const Offer = {
         }
     },
     created() {
-        this.fetchStudentData();
+        this.fetchBooksData();
     }
   }
   
