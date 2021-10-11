@@ -3,7 +3,8 @@ const SomeApp = {
       return {
         students: [],
         selectedStudent: null,
-        offers: []
+        offers: [],
+        offerForm: {}
       }
     },
     computed: {},
@@ -49,6 +50,28 @@ const SomeApp = {
             .catch( (error) => {
                 console.error(error);
             });
+        },
+        postNewOffer(evt) {
+          this.offerForm.studentId = this.selectedStudent.id;        
+          console.log("Posting:", this.offerForm);
+          // alert("Posting!");
+  
+          fetch('api/offer/create.php', {
+              method:'POST',
+              body: JSON.stringify(this.offerForm),
+              headers: {
+                "Content-Type": "application/json; charset=utf-8"
+              }
+            })
+            .then( response => response.json() )
+            .then( json => {
+              console.log("Returned from post:", json);
+              // TODO: test a result was returned!
+              this.offers = json;
+              
+              // reset the form
+              this.offerForm = {};
+            });
         }
     },
     created() {
@@ -58,3 +81,4 @@ const SomeApp = {
   }
   
   Vue.createApp(SomeApp).mount('#offerApp');
+  
