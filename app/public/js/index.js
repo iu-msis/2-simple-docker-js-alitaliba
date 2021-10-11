@@ -4,6 +4,7 @@ const SomeApp = {
         students: [],
         selectedStudent: null,
         offers: [],
+        books: [],
         offerForm: {}
       }
     },
@@ -35,6 +36,17 @@ const SomeApp = {
             .catch( (err) => {
                 console.error(err);
             })
+        },
+        fetchBooksData() {
+            fetch("/api/books/")
+            .then( response => response.json())
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
+            })
+            .catch( err => {
+                console.error(err)
+            });
         },
         fetchOfferData(s) {
             console.log("Fetching offer data for ", s);
