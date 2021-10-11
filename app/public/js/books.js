@@ -1,4 +1,4 @@
-const book = {
+const bookApp = {
     data() {
       return {
             books: []
@@ -23,4 +23,4 @@ const book = {
     }
   }
   
-Vue.createApp(book).mount('#bookApp');
+Vue.createApp(bookApp).mount('#bookApp');
