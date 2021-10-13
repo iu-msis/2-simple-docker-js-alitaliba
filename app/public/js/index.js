@@ -39,14 +39,14 @@ const SomeApp = {
         },
         fetchBooksData() {
             fetch("/api/books/")
-            .then( response => response.json())
+            .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
                 this.books = responseJson;
             })
             .catch( err => {
-                console.error(err)
-            });
+                console.error(err);
+            })
         },
         fetchOfferData(s) {
             console.log("Fetching offer data for ", s);
@@ -92,5 +92,5 @@ const SomeApp = {
   
   }
   
-  Vue.createApp(SomeApp).mount('#offerApp');
+  Vue.createApp(SomeApp).mount('#App');
   
