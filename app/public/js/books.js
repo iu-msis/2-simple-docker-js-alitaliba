@@ -1,7 +1,8 @@
 const book = {
     data() {
       return {
-            books: []
+            books: [],
+            offerForm: {}
         }
     },
     computed: {},

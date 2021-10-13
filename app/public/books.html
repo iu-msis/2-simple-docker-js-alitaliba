@@ -11,6 +11,7 @@
 
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
     <title>Hello, world!</title>
     
@@ -75,39 +76,39 @@
             </table>
           </div>
 
-        <!-- Forms Section
+        <!-- Forms Section -->
         <div class="col col-4">
 
           <form v-on:submit.prevent="postNewOffer">
             <div class="mb-3">
-              <label for="companyName" class="form-label">Title</label>
-              <input type="text" v-model="offerForm.companyName"
-               class="form-control" id="companyName">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" v-model="offerForm.title"
+               class="form-control" id="title">
             </div>
             <div class="mb-3">
-              <label for="companyName" class="form-label">Author</label>
-              <input type="text" v-model="offerForm.companyName"
-               class="form-control" id="companyName">
+              <label for="author" class="form-label">Author</label>
+              <input type="text" v-model="offerForm.author"
+               class="form-control" id="author">
             </div>
             <div class="mb-3">
-              <label for="offerDate" class="form-label">Year Published</label>
-              <input type="date" v-model="offerForm.offerDate" class="form-control" id="offerDate">
+              <label for="year" class="form-label">Year Published</label>
+              <input type="date" v-model="offerForm.year" class="form-control" id="year">
             </div>
             <div class="mb-3">
-              <label for="companyName" class="form-label">Publisher</label>
-              <input type="text" v-model="offerForm.companyName"
-               class="form-control" id="companyName">
+              <label for="publisher" class="form-label">Publisher</label>
+              <input type="text" v-model="offerForm.publisher"
+               class="form-control" id="publisher">
             </div>
             <div class="mb-3">
-              <label for="salary" class="form-label">Page Count</label>
-              <input type="number" v-model="offerForm.salary" class="form-control" id="salary">
+              <label for="page" class="form-label">Page Count</label>
+              <input type="number" v-model="offerForm.page" class="form-control" id="page">
             </div>
             <div class="mb-3">
-              <label for="salary" class="form-label">MSRP</label>
-              <input type="number" v-model="offerForm.salary" class="form-control" id="salary">
+              <label for="MSRP" class="form-label">MSRP</label>
+              <input type="number" v-model="offerForm.MSRP" class="form-control" id="MSRP">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-          </form> -->
+          </form>
 
 
 

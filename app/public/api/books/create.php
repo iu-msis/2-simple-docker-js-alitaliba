@@ -32,7 +32,7 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
   'INSERT INTO books (id, title, author, year, publisher, page, MSRP)
-  VALUES (?, ?, ?, ?, ?)'
+  VALUES (?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
