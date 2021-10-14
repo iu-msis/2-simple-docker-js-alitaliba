@@ -18,8 +18,7 @@ const book = {
                 console.error(err)
             })
         },
-        postNewOffer(evt) {
-          this.offerForm.studentId = this.selectedStudent.id;        
+        postNewOffer(evt) {      
           console.log("Posting:", this.offerForm);
           // alert("Posting!");
   
@@ -34,7 +33,7 @@ const book = {
             .then( json => {
               console.log("Returned from post:", json);
               // TODO: test a result was returned!
-              this.offers = json;
+              this.books = json;
               
               // reset the form
               this.offerForm = {};
