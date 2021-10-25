@@ -59,20 +59,20 @@
                   <th>Status</th>
                 </tr>
               </thead>
-                <tbody>
-                    <tr v-for="offer in offers">
-                        <td>{{ offer.companyName }}</td>
-                        <td>{{ prettyDollar(offer.salary) }}</td>
-                        <td>{{ prettyDollar(offer.bonus) }}</td>
-                        <td>{{ offer.offerDate }}</td>
-                        <td></td>
-                        <td>
-                          <button type="button" v-on:click="handleEditOffer(offer)" class="btn btn-outline-secondary btn-sm">Edit</button>
-                          <button type="button" v-on:click="postDeleteOffer(offer)" class="btn btn-outline-secondary btn-sm">Delete</button>
+              <tbody>
+                  <tr v-for="offer in offers">
+                      <td>{{ offer.companyName }}</td>
+                      <td>{{ prettyDollar(offer.salary) }}</td>
+                      <td>{{ prettyDollar(offer.bonus) }}</td>
+                      <td>{{ offer.offerDate }}</td>
+                      <td></td>
+                      <td>
+                        <button type="button" v-on:click="handleEditOffer(offer)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                        <button type="button" v-on:click="postDeleteOffer(offer)" class="btn btn-outline-secondary btn-sm">Delete</button>
 
-                        </td>
-                    </tr>
-                </tbody>
+                      </td>
+                  </tr>
+              </tbody>
             </table>
 
             <h3>{{ selectedOffer === null ? "Add " : "Edit " }} Offer</h3>

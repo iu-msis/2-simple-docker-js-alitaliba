@@ -24,7 +24,6 @@
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
@@ -36,8 +35,6 @@
           <li class="nav-item">
             <a class="nav-link" href="books.html">Books</a>
           </li>
-
-
         </ul>
       </div>
     </div>
@@ -46,30 +43,27 @@
   <body>
 
     <div id="offerApp" class="container" id='user_container'>
-        <div class="row" v-if="person.picture">
+      <div class="row" v-if="person.picture">
 
-          <div class="col-2"> 
-            <a :href="person.picture.large">
-              <img :src="person.picture.large" alt="person profile picture">
-            </a>
-            <p style="font-size: 6pt;">https://randomuser.me</p>
-          </div>
-
-          <div class="col-10">
-            <h2> My Profile </h2>
-            <p>Name: {{ person.name.first }} {{ person.name.last }}</p>
-            <p>Email: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
-            <p>Birthday: {{ prettyBirthday }}</p>
-            <p>Country: {{ person.location.country }}</p>
-            <p>Address: {{ person.location.street.number }} {{person.location.street.name}}, {{person.location.city}}, {{person.location.state}} {{person.location.postcode}}</p>
-            <form v-on:submit.prevent="fetchUserData">
-              <button type="submit">New User</button>
-            </form>
-          </div>
-        
-        
-
+        <div class="col-2"> 
+          <a :href="person.picture.large">
+            <img :src="person.picture.large" alt="person profile picture">
+          </a>
+          <p style="font-size: 6pt;">https://randomuser.me</p>
         </div>
+
+        <div class="col-10">
+          <h2> My Profile </h2>
+          <p>Name: {{ person.name.first }} {{ person.name.last }}</p>
+          <p>Email: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
+          <p>Birthday: {{ prettyBirthday }}</p>
+          <p>Country: {{ person.location.country }}</p>
+          <p>Address: {{ person.location.street.number }} {{person.location.street.name}}, {{person.location.city}}, {{person.location.state}} {{person.location.postcode}}</p>
+          <form v-on:submit.prevent="fetchUserData">
+            <button type="submit">New User</button>
+          </form>
+        </div>
+      </div>
     </div>
 
 

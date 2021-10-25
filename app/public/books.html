@@ -65,11 +65,15 @@
               </thead>
               <tbody>
                   <tr v-for="book in books">
-                      <td>{{ book.title }}</td>
-                      <td>{{ book.author }}</td>
-                      <td>{{ book.year }}</td>
-                      <td>{{ book.publisher }}</td>
-                      <td>{{ book.page }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.year }}</td>
+                    <td>{{ book.publisher }}</td>
+                    <td>{{ book.page }}</td>
+                    <td>
+                      <button type="button" v-on:click="handleEditBook(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                      <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
+                    </td>
                   </tr>
               </tbody>
             </table>
@@ -77,7 +81,7 @@
 
         <!-- Forms Section -->
         <div class="col col-4">
-
+          <h3>{{ selectedBook === null ? "Add " : "Edit " }} Book</h3>
           <form v-on:submit.prevent="postNewBook">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
