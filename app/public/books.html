@@ -52,32 +52,32 @@
       <div class="row align-items-start">
 
         <!-- The Javascript Section-->
-          <div class="col col-8">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Year</th>
-                  <th>Publisher Date</th>
-                  <th>Page</th>
+        <div class="col col-8">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Publisher Date</th>
+                <th>Page</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr v-for="book in books">
+                  <td>{{ book.title }}</td>
+                  <td>{{ book.author }}</td>
+                  <td>{{ book.year }}</td>
+                  <td>{{ book.publisher }}</td>
+                  <td>{{ book.page }}</td>
+                  <td>
+                    <button type="button" v-on:click="handleEditBook(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                    <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                  <tr v-for="book in books">
-                    <td>{{ book.title }}</td>
-                    <td>{{ book.author }}</td>
-                    <td>{{ book.year }}</td>
-                    <td>{{ book.publisher }}</td>
-                    <td>{{ book.page }}</td>
-                    <td>
-                      <button type="button" v-on:click="handleEditBook(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
-                      <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
-                    </td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
+            </tbody>
+          </table>
+        </div>
 
         <!-- Forms Section -->
         <div class="col col-4">
@@ -90,8 +90,7 @@
             </div>
             <div class="mb-3">
               <label for="author" class="form-label">Author</label>
-              <input type="text" v-model="bookForm.author"
-               class="form-control" id="author">
+              <input type="text" v-model="bookForm.author" class="form-control" id="author">
             </div>
             <div class="mb-3">
               <label for="year" class="form-label">Year Published</label>
@@ -112,7 +111,6 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-
         </div>
       </div>
     </div>

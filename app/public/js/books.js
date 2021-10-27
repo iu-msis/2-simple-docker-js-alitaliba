@@ -42,27 +42,27 @@ const book = {
     },
     postDeleteBook(o) {  
       if ( !confirm("Are you sure you want to delete the book from " + o.companyName + "?") ) {
-          return;
+        return;
       }  
       
       console.log("Delete!", o);
 
       fetch('api/books/delete.php', {
-          method:'POST',
-          body: JSON.stringify(o),
-          headers: {
-            "Content-Type": "application/json; charset=utf-8"
-          }
-        })
-        .then( response => response.json() )
-        .then( json => {
-          console.log("Returned from post:", json);
-          // TODO: test a result was returned!
-          this.books = json;
-          
-          // reset the form
-          this.handleResetEdit();
-        });
+        method:'POST',
+        body: JSON.stringify(o),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log("Returned from post:", json);
+        // TODO: test a result was returned!
+        this.books = json;
+        
+        // reset the form
+        this.handleResetEdit();
+      });
     },
     handleEditBook(book) {
       this.selectedBook = book;
@@ -74,7 +74,7 @@ const book = {
     }
   },
   created() {
-      this.fetchBooksData();
+    this.fetchBooksData();
   }
 }
   
