@@ -15,63 +15,80 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-            </ul>
-          </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark left">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Recruitment Hub</a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="user.html">User</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="#">Books</a>
+            </li>
+  
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>  
 
-    <div class="container">
+    <div  id="offerApp" class="container">
         <div class="row align-items-start">
           <div class="col col-4">
-            <p>First of two columns</p>
+            
+            <div class="student" v-for="s in students"
+              v-on:click="selectStudent(s)">
+              <span class="userName">{{ s.username }}</span><br>
+              <span class="studentName">{{ s.name }}</span>
+            </div>
+
           </div>
-          <div id="offerApp" class="col col-8">
-            <h1>Hello, world!</h1>
+          <div class="col col-8" v-if="selectedStudent">
+            <h1>Offers for {{ selectedStudent.name }}</h1>
 
-            <form v-on:onsubmit="fetchUser">
-              <button type='submit'>Refresh</button>
-            </form> <!-- Try to sends data to the action attributes, by default it's the page we're on. Refreshing the entire page-->
-
-            <p>{{person.name.first}} {{person.name.last}}</p>
-
-            <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
-            <p>{{ person }}</p>
-
-            <table class="table">
-                <tbody>
-                    <tr v-for="offer in offers">
-                        <td>{{ offer.name }}</td>
-                        <td>{{ offer.salary }}</td>
-                        <td>{{ offer.bonus }}</td>
-                        <td>{{ offer.company }}</td>
-                        <td>{{ offer.offerDate }}</td>
-                    </tr>
-                </tbody>
+            <table class="table" v-if="offers.length">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Salary</th>
+                  <th>Bonus</th>
+                  <th>Offer Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr v-for="offer in offers">
+                      <td>{{ offer.companyName }}</td>
+                      <td>{{ offer.salary }}</td>
+                      <td>{{ offer.bonus }}</td>
+                      <td>{{ offer.offerDate }}</td>
+                      <td></td>
+                  </tr>
+              </tbody>
             </table>
 
+            <div v-if="offers.length == 0">
+              <h3>No offers! 😢</h3>
+            </div>
           </div>
-
         </div>
+    </div>
 
     <!--  Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
     <script src="js/index.js"></script>
   </body>
